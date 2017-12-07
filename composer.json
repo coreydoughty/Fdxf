@@ -1,0 +1,30 @@
+{
+  "name": "Fdxf",
+  "homepage": "https://github.com/coreydoughty/Fdxf",
+  "description": "FDXF: Build DXF ASCII files.",
+  "keywords": ["fdxf", "dxf"],
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Corey Doughty",
+      "email": "corey@doughty.ca"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "league/flysystem": "^1.0",
+    "league/flysystem-cached-adapter": "^1.0"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Fdxf\\": "src/Fdxf"
+    }
+  }
+}
