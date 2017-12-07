@@ -12,7 +12,7 @@ Preliminary alpha stage. Currently only release 12.
 Add to your "__composer.json__" file under the "__require__" section:
 
 ```
-"cjd/fdxf": "dev-master"
+"fdxf/fdxf": "dev-master"
 ```
 
 
@@ -32,7 +32,7 @@ In your php file that you want to use the class add a use statement.
 use Fdxf\Fdxf;
 ```
 
-Then use as per the FPDF documantation.
+Then use as per the documantation.
 
 ``` php
 $pdf = new Fdxf();
