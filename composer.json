@@ -1,5 +1,5 @@
 {
-  "name": "Fdxf",
+  "name": "cjd/fdxf",
   "homepage": "https://github.com/coreydoughty/Fdxf",
   "description": "FDXF: Build DXF ASCII files.",
   "keywords": ["fdxf", "dxf"],
