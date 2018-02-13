@@ -12,7 +12,7 @@ Preliminary alpha stage. Currently only release 12.
 Add to your "__composer.json__" file under the "__require__" section:
 
 ```
-"fdxf/fdxf": "dev-master"
+"fdxf/fdxf": "^0.1"
 ```
 
 
