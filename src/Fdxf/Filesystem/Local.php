@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Fdxf\Filesystem\Local;
+namespace Fdxf\Filesystem;
 
 use League\Flysystem\Filesystem;
 use League\Flysystem\Cached\CachedAdapter;

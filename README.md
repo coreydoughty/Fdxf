@@ -71,7 +71,7 @@ class CustomDxf extends Fdxf
 
 ### To Do
 
-  * Documentation
+  * Documentation, see preliminary in `docs` folder.
   * Tests
 
 

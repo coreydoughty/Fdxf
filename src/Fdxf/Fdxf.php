@@ -55,6 +55,7 @@ class Fdxf extends Fdxf_Blocks
 	 *
 	 * @param string|null $filedir
 	 * @param string|null $filename
+	 *
 	 * @return string
 	 */
 	public function Output(
@@ -87,11 +88,13 @@ class Fdxf extends Fdxf_Blocks
 
 	/**
 	 * Set width, height, and thickness of drawing.
+	 * Not in Base class due to header settings
 	 *
 	 * @param float $X
 	 * @param float $Y
 	 * @param float $Z
-	 * @return FDXF
+	 *
+	 * @return self
 	 */
 	public function SetDimensions(
 		$X = 0.0,
@@ -119,8 +122,9 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add to the entity string
 	 *
-	 * @param $str
-	 * @return FDXF
+	 * @param string $str
+	 *
+	 * @return self
 	 */
 	public function SetEntity(
 		$str
@@ -133,8 +137,9 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add to the entity string
 	 *
-	 * @param $str
-	 * @return FDXF
+	 * @param string $str
+	 *
+	 * @return self
 	 */
 	public function AddEntity(
 		$str
@@ -147,7 +152,7 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Empty entities string
 	 *
-	 * @return FDXF
+	 * @return self
 	 */
 	public function ClearEntities() {
 		$this->entities = '';
@@ -158,7 +163,7 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Empty layers, blocks, and entities
 	 *
-	 * @return FDXF
+	 * @return self
 	 */
 	public function Clear() {
 		$this->ClearLayers();
@@ -187,25 +192,26 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF line entity string
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $EndX
-	 * @param $EndY
-	 * @param $EndZ
-	 * @param $Thickness
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $EndX
+	 * @param float $EndY
+	 * @param float $EndZ
+	 * @param float $Thickness
+	 *
 	 * @return string
 	 */
 	public function Line(
 		$Layer = '0',
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$EndX = 0,
-		$EndY = 0,
-		$EndZ = 0,
-		$Thickness = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$EndX = 0.0,
+		$EndY = 0.0,
+		$EndZ = 0.0,
+		$Thickness = 0.0
 	) {
 		$seed = $this->GetHANDSEED();
 		$this->SetHANDSEED( (int)$seed + 1 );
@@ -229,25 +235,26 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF line to entities
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $EndX
-	 * @param $EndY
-	 * @param $EndZ
-	 * @param $Thickness
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $EndX
+	 * @param float $EndY
+	 * @param float $EndZ
+	 * @param float $Thickness
+	 *
+	 * @return self
 	 */
 	public function AddLine(
 		$Layer = '0',
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$EndX = 0,
-		$EndY = 0,
-		$EndZ = 0,
-		$Thickness = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$EndX = 0.0,
+		$EndY = 0.0,
+		$EndZ = 0.0,
+		$Thickness = 0.0
 	) {
 		$this->entities .= $this->Line(
 			$Layer,
@@ -267,21 +274,22 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF circle entity string
 	 *
-	 * @param $Layer
-	 * @param $CenterX
-	 * @param $CenterY
-	 * @param $CenterZ
-	 * @param $Radius
-	 * @param $Thickness
+	 * @param string $Layer
+	 * @param float $CenterX
+	 * @param float $CenterY
+	 * @param float $CenterZ
+	 * @param float $Radius
+	 * @param float $Thickness
+	 *
 	 * @return string
 	 */
 	public function Circle(
 		$Layer = "0",
-		$CenterX = 0,
-		$CenterY = 0,
-		$CenterZ = 0,
-		$Radius = 0,
-		$Thickness = 0
+		$CenterX = 0.0,
+		$CenterY = 0.0,
+		$CenterZ = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0
 	) {
 		$seed = $this->GetHANDSEED();
 		$this->SetHANDSEED( (int)$seed + 1 );
@@ -302,21 +310,22 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF circle to entities
 	 *
-	 * @param $Layer
-	 * @param $CenterX
-	 * @param $CenterY
-	 * @param $CenterZ
-	 * @param $Radius
-	 * @param $Thickness
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $CenterX
+	 * @param float $CenterY
+	 * @param float $CenterZ
+	 * @param float $Radius
+	 * @param float $Thickness
+	 *
+	 * @return self
 	 */
 	public function AddCircle(
 		$Layer = "0",
-		$CenterX = 0,
-		$CenterY = 0,
-		$CenterZ = 0,
-		$Radius = 0,
-		$Thickness = 0
+		$CenterX = 0.0,
+		$CenterY = 0.0,
+		$CenterZ = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0
 	) {
 		$this->entities .= $this->Circle(
 			$Layer,
@@ -334,25 +343,26 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF Arc entitiy string
 	 *
-	 * @param $Layer
-	 * @param $CenterX
-	 * @param $CenterY
-	 * @param $CenterZ
-	 * @param $Radius
-	 * @param $Thickness
-	 * @param $AngleStart
-	 * @param $AngleEnd
+	 * @param string $Layer
+	 * @param float $CenterX
+	 * @param float $CenterY
+	 * @param float $CenterZ
+	 * @param float $Radius
+	 * @param float $Thickness
+	 * @param float $AngleStart
+	 * @param float $AngleEnd
+	 *
 	 * @return string
 	 */
 	public function Arc(
 		$Layer = "0",
-		$CenterX = 0,
-		$CenterY = 0,
-		$CenterZ = 0,
-		$Radius = 0,
-		$Thickness = 0,
-		$AngleStart = 0,
-		$AngleEnd = 0
+		$CenterX = 0.0,
+		$CenterY = 0.0,
+		$CenterZ = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0,
+		$AngleStart = 0.0,
+		$AngleEnd = 0.0
 	) {
 		$seed = $this->GetHANDSEED();
 		$this->SetHANDSEED( (int)$seed + 1 );
@@ -377,25 +387,26 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF Arc to entities
 	 *
-	 * @param $Layer
-	 * @param $CenterX
-	 * @param $CenterY
-	 * @param $CenterZ
-	 * @param $Radius
-	 * @param $Thickness
-	 * @param $AngleStart
-	 * @param $AngleEnd
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $CenterX
+	 * @param float $CenterY
+	 * @param float $CenterZ
+	 * @param float $Radius
+	 * @param float $Thickness
+	 * @param float $AngleStart
+	 * @param float $AngleEnd
+	 *
+	 * @return self
 	 */
 	public function AddArc(
 		$Layer = "0",
-		$CenterX = 0,
-		$CenterY = 0,
-		$CenterZ = 0,
-		$Radius = 0,
-		$Thickness = 0,
-		$AngleStart = 0,
-		$AngleEnd = 0
+		$CenterX = 0.0,
+		$CenterY = 0.0,
+		$CenterZ = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0,
+		$AngleStart = 0.0,
+		$AngleEnd = 0.0
 	) {
 		$this->entities .= $this->Arc(
 			$Layer,
@@ -415,19 +426,20 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF polyline start string
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $Thickness
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $Thickness
+	 *
 	 * @return string
 	 */
 	public function PlineStart(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$Thickness = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$Thickness = 0.0
 	) {
 		$seed = $this->GetHANDSEED();
 		$this->SetHANDSEED( (int)$seed + 1 );
@@ -452,19 +464,20 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF polyline start
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $Thickness
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $Thickness
+	 *
+	 * @return self
 	 */
 	public function AddPlineStart(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$Thickness = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$Thickness = 0.0
 	) {
 		$this->entities .= $this->PlineStart(
 			$Layer,
@@ -486,19 +499,20 @@ class Fdxf extends Fdxf_Blocks
 	 * a bulge of 0 indicates a straight segment, and a bulge of 1 is a semicircle.
 	 * Bulge is Number 42. Autocad gives 16 digits for this.
 	 *
-	 * @param $Layer
-	 * @param $X
-	 * @param $Y
-	 * @param $Z
-	 * @param $Bulge
+	 * @param string $Layer
+	 * @param float $X
+	 * @param float $Y
+	 * @param float $Z
+	 * @param float $Bulge
+	 *
 	 * @return string
 	 */
 	public function PlineEntity(
 		$Layer = "0",
-		$X = 0,
-		$Y = 0,
-		$Z = 0,
-		$Bulge = 0
+		$X = 0.0,
+		$Y = 0.0,
+		$Z = 0.0,
+		$Bulge = 0.0
 	) {
 		$s = '';
 		$s .= $this->gc( '0', 'VERTEX' );
@@ -518,19 +532,20 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF polyline to entities string
 	 *
-	 * @param $Layer
-	 * @param $X
-	 * @param $Y
-	 * @param $Z
-	 * @param $Bulge
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $X
+	 * @param float $Y
+	 * @param float $Z
+	 * @param float $Bulge
+	 *
+	 * @return self
 	 */
 	public function AddPlineEntity(
 		$Layer = "0",
-		$X = 0,
-		$Y = 0,
-		$Z = 0,
-		$Bulge = 0
+		$X = 0.0,
+		$Y = 0.0,
+		$Z = 0.0,
+		$Bulge = 0.0
 	) {
 		$this->entities .= $this->PlineEntity(
 			$Layer,
@@ -547,7 +562,8 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF polyline close entity string
 	 *
-	 * @param $Layer
+	 * @param string $Layer
+	 *
 	 * @return string
 	 */
 	public function PlineClose(
@@ -564,8 +580,9 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF polyline close to entities
 	 *
-	 * @param $Layer
-	 * @return FDXF
+	 * @param string $Layer
+	 *
+	 * @return self
 	 */
 	public function AddPlineClose(
 		$Layer = "0"
@@ -581,22 +598,23 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF text entity string
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $TextHeight
-	 * @param $Rotation
-	 * @param $Text
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $TextHeight
+	 * @param float $Rotation
+	 * @param string $Text
+	 *
 	 * @return string
 	 */
 	public function Text(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$TextHeight = 0,
-		$Rotation = 0,
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$TextHeight = 0.0,
+		$Rotation = 0.0,
 		$Text = ' '
 	) {
 		$seed = $this->GetHANDSEED();
@@ -621,22 +639,23 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF text to entities
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $TextHeight
-	 * @param $Rotation
-	 * @param $Text
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $TextHeight
+	 * @param float $Rotation
+	 * @param string $Text
+	 *
+	 * @return self
 	 */
 	public function AddText(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$TextHeight = 0,
-		$Rotation = 0,
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$TextHeight = 0.0,
+		$Rotation = 0.0,
 		$Text = ' '
 	) {
 		$this->entities .= $this->Text(
@@ -657,21 +676,22 @@ class Fdxf extends Fdxf_Blocks
 	 * DXF block by name entity string
 	 * Block string must be added in Block section.
 	 *
-	 * @param $Layer
-	 * @param $BlockName
-	 * @param $X
-	 * @param $Y
-	 * @param $Z
-	 * @param $Rotation
+	 * @param string $Layer
+	 * @param string $BlockName
+	 * @param float $X
+	 * @param float $Y
+	 * @param float $Z
+	 * @param float $Rotation
+	 *
 	 * @return string
 	 */
 	public function BlockEntity(
 		$Layer = "0",
-		$BlockName = null,
-		$X = 0,
-		$Y = 0,
-		$Z = 0,
-		$Rotation = 0
+		$BlockName,
+		$X = 0.0,
+		$Y = 0.0,
+		$Z = 0.0,
+		$Rotation = 0.0
 	) {
 		$seed = $this->GetHANDSEED();
 		$this->SetHANDSEED( (int)$seed + 1 );
@@ -694,21 +714,22 @@ class Fdxf extends Fdxf_Blocks
 	 * Add DXF block by name to entities
 	 * Block string must be added in Block section.
 	 *
-	 * @param $Layer
-	 * @param $BlockName
-	 * @param $X
-	 * @param $Y
-	 * @param $Z
-	 * @param $Rotation
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $BlockName
+	 * @param float $X
+	 * @param float $Y
+	 * @param float $Z
+	 * @param float $Rotation
+	 *
+	 * @return self
 	 */
 	public function AddBlockEntity(
 		$Layer = "0",
-		$BlockName = null,
-		$X = 0,
-		$Y = 0,
-		$Z = 0,
-		$Rotation = 0
+		$BlockName,
+		$X = 0.0,
+		$Y = 0.0,
+		$Z = 0.0,
+		$Rotation = 0.0
 	) {
 		$this->entities .= $this->BlockEntity(
 			$Layer,
@@ -726,35 +747,36 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * DXF rectangle enitiy string
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $HeightX
-	 * @param $WidthY
-	 * @param $Radius
-	 * @param $Thickness
-	 * @param $Bot
-	 * @param $Top
-	 * @param $Right
-	 * @param $Left
-	 * @param $Offset
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $HeightX
+	 * @param float $WidthY
+	 * @param float $Radius
+	 * @param float $Thickness
+	 * @param float $Bot
+	 * @param float $Top
+	 * @param float $Right
+	 * @param float $Left
+	 * @param float $Offset
+	 *
 	 * @return string
 	 */
 	public function Rectangle(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$HeightX = 0,
-		$WidthY = 0,
-		$Radius = 0,
-		$Thickness = 0,
-		$Bot = 0,
-		$Top = 0,
-		$Right = 0,
-		$Left = 0,
-		$Offset = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$HeightX = 0.0,
+		$WidthY = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0,
+		$Bot = 0.0,
+		$Top = 0.0,
+		$Right = 0.0,
+		$Left = 0.0,
+		$Offset = 0.0
 	) {
 		//--- Rectangle Offset Calculations ---
 		$StartX = $StartX + ( $Bot - $Offset );
@@ -829,35 +851,36 @@ class Fdxf extends Fdxf_Blocks
 	/**
 	 * Add DXF rectangle to entities
 	 *
-	 * @param $Layer
-	 * @param $StartX
-	 * @param $StartY
-	 * @param $StartZ
-	 * @param $HeightX
-	 * @param $WidthY
-	 * @param $Radius
-	 * @param $Thickness
-	 * @param $Bot
-	 * @param $Top
-	 * @param $Right
-	 * @param $Left
-	 * @param $Offset
-	 * @return FDXF
+	 * @param string $Layer
+	 * @param float $StartX
+	 * @param float $StartY
+	 * @param float $StartZ
+	 * @param float $HeightX
+	 * @param float $WidthY
+	 * @param float $Radius
+	 * @param float $Thickness
+	 * @param float $Bot
+	 * @param float $Top
+	 * @param float $Right
+	 * @param float $Left
+	 * @param float $Offset
+	 *
+	 * @return self
 	 */
 	public function AddRectangle(
 		$Layer = "0",
-		$StartX = 0,
-		$StartY = 0,
-		$StartZ = 0,
-		$HeightX = 0,
-		$WidthY = 0,
-		$Radius = 0,
-		$Thickness = 0,
-		$Bot = 0,
-		$Top = 0,
-		$Right = 0,
-		$Left = 0,
-		$Offset = 0
+		$StartX = 0.0,
+		$StartY = 0.0,
+		$StartZ = 0.0,
+		$HeightX = 0.0,
+		$WidthY = 0.0,
+		$Radius = 0.0,
+		$Thickness = 0.0,
+		$Bot = 0.0,
+		$Top = 0.0,
+		$Right = 0.0,
+		$Left = 0.0,
+		$Offset = 0.0
 	) {
 		$this->entities .= $this->Rectangle(
 			$Layer,

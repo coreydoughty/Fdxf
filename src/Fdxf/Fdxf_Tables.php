@@ -73,126 +73,6 @@ class Fdxf_Tables extends Fdxf_Headers
 
 
 	/**
-	 * Table Viewport
-	 *
-	 * @return string
-	 */
-	private function TableVPORT() {
-		$s = '';
-		$s .= $this->gc( '0', 'TABLE' );
-		$s .= $this->gc( '2', 'VPORT' );
-		$s .= $this->gc( '70', '1' );
-
-		$s .= $this->gc( '0', 'VPORT' );
-
-		// Viewport name
-		$s .= $this->gc( '2', '*ACTIVE' );
-
-		// Standard flag values (See "Common Group Codes for Symbol Table Entries.")
-		$s .= $this->gc( '70', '0' );
-
-		// Lower-left corner of viewport
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of lower-left corner of viewport
-		$s .= $this->gc( '10', '0.0' );
-		$s .= $this->gc( '20', '0.0' );
-
-		// Upper-right corner of viewport
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of upper-right corner of viewport
-		$s .= $this->gc( '11', $this->X );
-		$s .= $this->gc( '21', $this->Y );
-
-		// View center point (in DCS).
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of view center point (in DCS)
-		$s .= $this->gc( '12', ( $this->X / 2 ) );
-		$s .= $this->gc( '22', ( $this->Y / 2 ) );
-
-		// Snap base point.
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of snap base point
-		$s .= $this->gc( '13', '0.0' );
-		$s .= $this->gc( '23', '0.0' );
-
-		// Snap spacing X and Y.
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of snap spacing X and Y
-		$s .= $this->gc( '14', '1.0' );
-		$s .= $this->gc( '24', '1.0' );
-
-		// Grid spacing X and Y.
-		// DXF: X value; APP: 2D point
-		// DXF: Y value of grid spacing X and Y
-		$s .= $this->gc( '15', '0.0' );
-		$s .= $this->gc( '25', '0.0' );
-
-		// View direction from target point (in WCS)
-		// DXF: X value; APP: 3D point
-		// DXF: Y and Z values of view direction from target point (in WCS)
-		$s .= $this->gc( '16', '0.0' );
-		$s .= $this->gc( '26', '0.0' );
-		$s .= $this->gc( '36', '1.0' );
-
-		// View target point (in WCS).
-		// DXF: X value; APP: 3D point
-		// DXF: Y and Z values of view target point (in WCS)
-		$s .= $this->gc( '17', '0.0' );
-		$s .= $this->gc( '27', '0.0' );
-		$s .= $this->gc( '37', '0.0' );
-
-		// View height.
-		$s .= $this->gc( '40', $this->Y );
-
-		// Viewport aspect ratio
-		$s .= $this->gc( '41', $this->X / $this->Y );
-
-		// Lens length
-		$s .= $this->gc( '42', '50.0' );
-
-		// Front clipping plane (offset from target point)
-		$s .= $this->gc( '43', '0.0' );
-
-		// Back clipping plane (offset from target point)
-		$s .= $this->gc( '44', '0.0' );
-
-		// Snap rotation angle
-		$s .= $this->gc( '50', '0.0' );
-
-		// View twist angle
-		$s .= $this->gc( '51', '0.0' );
-
-		// View mode (see VIEWMODE system variable)
-		$s .= $this->gc( '71', '0' );
-
-		// Circle zoom percent
-		$s .= $this->gc( '72', '20000' );
-
-		// Fast zoom setting
-		$s .= $this->gc( '73', '1' );
-
-		// UCSICON setting
-		$s .= $this->gc( '74', '3' );
-
-		// Snap on/off
-		$s .= $this->gc( '75', '0' );
-
-		// Grid on/off
-		$s .= $this->gc( '76', '0' );
-
-		// Snap style
-		$s .= $this->gc( '77', '0' );
-
-		//Snap isopair
-		$s .= $this->gc( '78', '0' );
-
-		$s .= $this->gc( '0', 'ENDTAB' );
-
-		return $s;
-	}
-
-
-	/**
 	 * Add a typical DXF table string
 	 *
 	 * @return string
@@ -444,4 +324,125 @@ class Fdxf_Tables extends Fdxf_Headers
 
 		return $s;
 	}
+
+
+	/**
+	 * Table Viewport
+	 *
+	 * @return string
+	 */
+	private function TableVPORT() {
+		$s = '';
+		$s .= $this->gc( '0', 'TABLE' );
+		$s .= $this->gc( '2', 'VPORT' );
+		$s .= $this->gc( '70', '1' );
+
+		$s .= $this->gc( '0', 'VPORT' );
+
+		// Viewport name
+		$s .= $this->gc( '2', '*ACTIVE' );
+
+		// Standard flag values (See "Common Group Codes for Symbol Table Entries.")
+		$s .= $this->gc( '70', '0' );
+
+		// Lower-left corner of viewport
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of lower-left corner of viewport
+		$s .= $this->gc( '10', '0.0' );
+		$s .= $this->gc( '20', '0.0' );
+
+		// Upper-right corner of viewport
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of upper-right corner of viewport
+		$s .= $this->gc( '11', $this->X );
+		$s .= $this->gc( '21', $this->Y );
+
+		// View center point (in DCS).
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of view center point (in DCS)
+		$s .= $this->gc( '12', ( $this->X / 2 ) );
+		$s .= $this->gc( '22', ( $this->Y / 2 ) );
+
+		// Snap base point.
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of snap base point
+		$s .= $this->gc( '13', '0.0' );
+		$s .= $this->gc( '23', '0.0' );
+
+		// Snap spacing X and Y.
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of snap spacing X and Y
+		$s .= $this->gc( '14', '1.0' );
+		$s .= $this->gc( '24', '1.0' );
+
+		// Grid spacing X and Y.
+		// DXF: X value; APP: 2D point
+		// DXF: Y value of grid spacing X and Y
+		$s .= $this->gc( '15', '0.0' );
+		$s .= $this->gc( '25', '0.0' );
+
+		// View direction from target point (in WCS)
+		// DXF: X value; APP: 3D point
+		// DXF: Y and Z values of view direction from target point (in WCS)
+		$s .= $this->gc( '16', '0.0' );
+		$s .= $this->gc( '26', '0.0' );
+		$s .= $this->gc( '36', '1.0' );
+
+		// View target point (in WCS).
+		// DXF: X value; APP: 3D point
+		// DXF: Y and Z values of view target point (in WCS)
+		$s .= $this->gc( '17', '0.0' );
+		$s .= $this->gc( '27', '0.0' );
+		$s .= $this->gc( '37', '0.0' );
+
+		// View height.
+		$s .= $this->gc( '40', $this->Y );
+
+		// Viewport aspect ratio
+		$s .= $this->gc( '41', $this->X / $this->Y );
+
+		// Lens length
+		$s .= $this->gc( '42', '50.0' );
+
+		// Front clipping plane (offset from target point)
+		$s .= $this->gc( '43', '0.0' );
+
+		// Back clipping plane (offset from target point)
+		$s .= $this->gc( '44', '0.0' );
+
+		// Snap rotation angle
+		$s .= $this->gc( '50', '0.0' );
+
+		// View twist angle
+		$s .= $this->gc( '51', '0.0' );
+
+		// View mode (see VIEWMODE system variable)
+		$s .= $this->gc( '71', '0' );
+
+		// Circle zoom percent
+		$s .= $this->gc( '72', '20000' );
+
+		// Fast zoom setting
+		$s .= $this->gc( '73', '1' );
+
+		// UCSICON setting
+		$s .= $this->gc( '74', '3' );
+
+		// Snap on/off
+		$s .= $this->gc( '75', '0' );
+
+		// Grid on/off
+		$s .= $this->gc( '76', '0' );
+
+		// Snap style
+		$s .= $this->gc( '77', '0' );
+
+		//Snap isopair
+		$s .= $this->gc( '78', '0' );
+
+		$s .= $this->gc( '0', 'ENDTAB' );
+
+		return $s;
+	}
+
 }

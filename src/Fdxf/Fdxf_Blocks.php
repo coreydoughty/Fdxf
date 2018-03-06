@@ -51,6 +51,7 @@ class Fdxf_Blocks extends Fdxf_Tables
 	 * Add to the block string
 	 *
 	 * @param $str
+	 *
 	 * @return self
 	 */
 	public function SetBlock(
