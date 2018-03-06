@@ -2,6 +2,29 @@ Fdxf - DXF Class
 ================
 
 
+  - [Basics](#basics)
+    - [Create and Construct](#create-and-construct)
+    - [File System (Flysystem)](#file-system-flysystem)
+    - [Output](#output)
+  - [Section Headers](#section-headers)
+  - [Section Tables](#section-tables)
+    - [Set Layers](#set-layers)
+  - [Section Blocks](#section-blocks)
+    - [Set Block](#set-block)
+  - [Section Entites Standard](#section-entites-standard)
+    - [Line](#line)
+    - [Circle](#circle)
+    - [Arc](#arc)
+    - [Text](#text)
+    - [Polyline](#polyline-start-entity-close)
+    - [Polyline Start](#polyline-start)
+    - [Polyline Entity](#polyline-entity)
+    - [Polyline Close](#polyline-close)
+    - [Block Entity](#block-entity)
+  - [Section Entities Complex](#section-entities-complex)
+    - [Rectangle](#rectangle)
+
+
 ---
 ## Basics
 ---
@@ -197,11 +220,11 @@ See class Fdxf.
     - _Text (string)_: default " "
 
 
-### Polyline (Start, Entity, Close)
+### Polyline
 
- + See __Polyline Start__
- + See __Polyline Entity__
- + See __Polyline Close__
+ + See [Polyline Start](#polyline-start)
+ + See [Polyline Entity](#polyline-entity)
+ + See [Polyline Close](#polyline-close)
  + Example Combined:
    - `$dxf->AddPlineStart( ... );`
    - `$dxf->AddPlineEntity( ... );`
