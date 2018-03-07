@@ -61,10 +61,14 @@ class FdxfBlocks extends FdxfTables
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function GetBlocks() {
+		return $this->blocks;
+	}
 
 	/**
-	 * Empty blocks string
-	 *
 	 * @return self
 	 */
 	public function ClearBlocks() {

@@ -45,6 +45,19 @@ class FdxfHeadersTest extends TestCase
 	}
 
 	/**
+	 * Test accessors for dimensions variable
+	 */
+	public function testDimensions() {
+		$this->fdxf->SetDimensions( 21.1, 22.2, 23.3 );
+		$test = $this->fdxf->GetOverallX();
+		$this->assertEquals( 21.1, $test );
+		$test = $this->fdxf->GetOverallY();
+		$this->assertEquals( 22.2, $test );
+		$test = $this->fdxf->GetOverallZ();
+		$this->assertEquals( 23.3, $test );
+	}
+
+	/**
 	 * Test accessors for overall X variable
 	 */
 	public function testOverallX() {
