@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the dwp-cms package.
+ * This file is part of the Fdxf package.
  *
- * (c) Corey Doughty <corey@distinctivewoodproducts.com>
+ * (c) Corey Doughty <corey@doughty.ca>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.

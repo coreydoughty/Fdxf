@@ -101,9 +101,9 @@ class Fdxf extends FdxfBlocks
 		$Y = 0.0,
 		$Z = 0.0
 	) {
-		$this->X = (float)$X;
-		$this->Y = (float)$Y;
-		$this->Z = (float)$Z;
+		$this->SetOverallX( $X );
+		$this->SetOverallY( $Y );
+		$this->SetOverallZ( $Z );
 
 		$this->SetLIMMIN(
 			'-10',

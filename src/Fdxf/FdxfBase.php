@@ -79,6 +79,16 @@ class FdxfBase
 
 
 	/**
+	 * Get flysystem class
+	 *
+	 * @return Flysystem
+	 */
+	public function GetFlysystem() {
+		return $this->flysystem;
+	}
+
+
+	/**
 	 * Sets group code and value for string
 	 *
 	 * @param string $code
@@ -103,6 +113,67 @@ class FdxfBase
 		$code = str_pad( $code, 3, " ", STR_PAD_LEFT );
 
 		return (string)$code . "\n" . (string)$value . "\n";
+	}
+
+
+	/**
+	 * DXF overall height
+	 *
+	 * @param float $X
+	 * @return self
+	 */
+	public function SetOverallX(
+		$X
+	) {
+		$this->X = (float)$X;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetOverallX() {
+		return $this->X;
+	}
+
+	/**
+	 * DXF overall width
+	 *
+	 * @param float $Y
+	 * @return self
+	 */
+	public function SetOverallY(
+		$Y
+	) {
+		$this->Y = (float)$Y;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetOverallY() {
+		return $this->Y;
+	}
+
+	/**
+	 * DXF overall thickness
+	 *
+	 * @param float $Z
+	 * @return self
+	 */
+	public function SetOverallZ(
+		$Z
+	) {
+		$this->Z = (float)$Z;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetOverallZ() {
+		return $this->Z;
 	}
 
 }
