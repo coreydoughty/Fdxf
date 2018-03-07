@@ -17,7 +17,7 @@ namespace Fdxf;
  * Class Fdxf_Tables
  * @package Fdxf
  */
-class Fdxf_Tables extends Fdxf_Headers
+class FdxfTables extends FdxfHeaders
 {
 	/**
 	 * DXF layers array

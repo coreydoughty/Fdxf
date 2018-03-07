@@ -17,7 +17,7 @@ namespace Fdxf;
  * Class FDXF_Blocks
  * @package Fdxf
  */
-class Fdxf_Blocks extends Fdxf_Tables
+class FdxfBlocks extends FdxfTables
 {
 	/**
 	 * DXF block string for building

@@ -20,7 +20,7 @@ namespace Fdxf;
  * Class Fdxf
  * @package Fdxf
  */
-class Fdxf extends Fdxf_Blocks
+class Fdxf extends FdxfBlocks
 {
 	/**
 	 * DXF entities string for building

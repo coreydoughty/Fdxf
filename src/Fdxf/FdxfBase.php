@@ -19,7 +19,7 @@ use League\Flysystem\Filesystem as Flysystem;
  * Class FDXF_Base
  * @package Fdxf
  */
-class Fdxf_Base
+class FdxfBase
 {
 	/**
 	 * @var Flysystem

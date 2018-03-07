@@ -17,7 +17,7 @@ namespace Fdxf;
  * Class Fdxf_Headers
  * @package Fdxf
  */
-class Fdxf_Headers extends Fdxf_Base
+class FdxfHeaders extends FdxfBase
 {
 	/**
 	 * Application name and version for header comment.
@@ -1151,6 +1151,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetVersion() {
+		return $this->ACADVER;
+	}
+
+	/**
 	 * The AutoCAD drawing database version number:
 	 * AC1006 = R10, AC1009 = R11 and R12,
 	 * AC1012 = R13, AC1014 = R14, AC1500 = AutoCAD 2000
@@ -1195,6 +1202,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetACADVER() {
+		return $this->ACADVER;
+	}
+
+	/**
 	 * Insertion base set by BASE command (in WCS)
 	 *
 	 * @param string $X
@@ -1213,6 +1227,13 @@ class Fdxf_Headers extends Fdxf_Base
 			'Z' => (string)$Z
 		);
 		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function GetINSBASE() {
+		return $this->INSBASE;
 	}
 
 	/**
@@ -1237,6 +1258,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetEXTMIN() {
+		return $this->EXTMIN;
+	}
+
+	/**
 	 * X, Y, and Z drawing extents upper-right corner (in WCS)
 	 *
 	 * @param string $X
@@ -1258,6 +1286,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetEXTMAX() {
+		return $this->EXTMAX;
+	}
+
+	/**
 	 * XY drawing limits lower-left corner (in WCS)
 	 *
 	 * @param string $X
@@ -1273,6 +1308,13 @@ class Fdxf_Headers extends Fdxf_Base
 			'Y' => (string)$Y
 		);
 		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function GetLIMMIN() {
+		return $this->LIMMIN;
 	}
 
 	/**
@@ -1294,6 +1336,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetLIMMAX() {
+		return $this->LIMMAX;
+	}
+
+	/**
 	 * Ortho mode on if nonzero
 	 *
 	 * @param string $str
@@ -1304,6 +1353,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->ORTHOMODE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetORTHOMODE() {
+		return $this->ORTHOMODE;
 	}
 
 	/**
@@ -1320,6 +1376,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetREGENMODE() {
+		return $this->REGENMODE;
+	}
+
+	/**
 	 * Fill mode on if nonzero
 	 *
 	 * @param string $str
@@ -1330,6 +1393,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->FILLMODE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetFILLMODE() {
+		return $this->FILLMODE;
 	}
 
 	/**
@@ -1346,6 +1416,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetQTEXTMODE() {
+		return $this->QTEXTMODE;
+	}
+
+	/**
 	 * Mirror text if nonzero
 	 *
 	 * @param string $str
@@ -1356,6 +1433,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->MIRRTEXT = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetMIRRTEXT() {
+		return $this->MIRRTEXT;
 	}
 
 	/**
@@ -1373,6 +1457,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDRAGMODE() {
+		return $this->DRAGMODE;
+	}
+
+	/**
 	 * Global linetype scale
 	 *
 	 * @param string $str
@@ -1383,6 +1474,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->LTSCALE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetLTSCALE() {
+		return $this->LTSCALE;
 	}
 
 	/**
@@ -1419,6 +1517,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetOSMODE() {
+		return $this->OSMODE;
+	}
+
+	/**
 	 * Attribute visibility
 	 * 0 = none, 1 = normal, 2 = all
 	 *
@@ -1430,6 +1535,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->ATTMODE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetATTMODE() {
+		return $this->ATTMODE;
 	}
 
 	/**
@@ -1446,6 +1558,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetTEXTSIZE() {
+		return $this->TEXTSIZE;
+	}
+
+	/**
 	 * Default trace width
 	 *
 	 * @param string $str
@@ -1456,6 +1575,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->TRACEWID = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetTRACEWID() {
+		return $this->TRACEWID;
 	}
 
 	/**
@@ -1472,6 +1598,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetTEXTSTYLE() {
+		return $this->TEXTSTYLE;
+	}
+
+	/**
 	 * Current layer name
 	 *
 	 * @param string $str
@@ -1482,6 +1615,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->CLAYER = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetCLAYER() {
+		return $this->CLAYER;
 	}
 
 	/**
@@ -1498,6 +1638,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetCELTYPE() {
+		return $this->CELTYPE;
+	}
+
+	/**
 	 * Entity color number; 0 = BYBLOCK, 256 = BYLAYER
 	 *
 	 * @param string $str
@@ -1508,6 +1655,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->CECOLOR = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetCECOLOR() {
+		return $this->CECOLOR;
 	}
 
 	/**
@@ -1524,6 +1678,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMSCALE() {
+		return $this->DIMSCALE;
+	}
+
+	/**
 	 * Dimensioning arrow size
 	 *
 	 * @param string $str
@@ -1534,6 +1695,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMASZ = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMASZ() {
+		return $this->DIMASZ;
 	}
 
 	/**
@@ -1550,6 +1718,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMEXO() {
+		return $this->DIMEXO;
+	}
+
+	/**
 	 * Dimension line increment
 	 *
 	 * @param string $str
@@ -1560,6 +1735,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMDLI = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMDLI() {
+		return $this->DIMDLI;
 	}
 
 	/**
@@ -1576,6 +1758,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMRND() {
+		return $this->DIMRND;
+	}
+
+	/**
 	 * Dimension line extension
 	 *
 	 * @param string $str
@@ -1586,6 +1775,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMDLE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMDLE() {
+		return $this->DIMDLE;
 	}
 
 	/**
@@ -1602,6 +1798,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMEXE() {
+		return $this->DIMEXE;
+	}
+
+	/**
 	 * Plus tolerance
 	 *
 	 * @param string $str
@@ -1612,6 +1815,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTP = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTP() {
+		return $this->DIMTP;
 	}
 
 	/**
@@ -1628,6 +1838,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTM() {
+		return $this->DIMTM;
+	}
+
+	/**
 	 * Dimensioning text height
 	 *
 	 * @param string $str
@@ -1638,6 +1855,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTXT = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTXT() {
+		return $this->DIMTXT;
 	}
 
 	/**
@@ -1654,6 +1878,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMCEN() {
+		return $this->DIMCEN;
+	}
+
+	/**
 	 * Dimensioning tick size: 0 = no ticks
 	 *
 	 * @param string $str
@@ -1664,6 +1895,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTSZ = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTSZ() {
+		return $this->DIMTSZ;
 	}
 
 	/**
@@ -1680,6 +1918,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTOL() {
+		return $this->DIMTOL;
+	}
+
+	/**
 	 * Dimension limits generated if nonzero
 	 *
 	 * @param string $str
@@ -1690,6 +1935,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMLIM = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMLIM() {
+		return $this->DIMLIM;
 	}
 
 	/**
@@ -1706,6 +1958,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTIH() {
+		return $this->DIMTIH;
+	}
+
+	/**
 	 * Text outside horizontal if nonzero
 	 *
 	 * @param string $str
@@ -1716,6 +1975,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTOH = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTOH() {
+		return $this->DIMTOH;
 	}
 
 	/**
@@ -1732,6 +1998,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMSE1() {
+		return $this->DIMSE1;
+	}
+
+	/**
 	 * Second extension line suppressed if nonzero
 	 *
 	 * @param string $str
@@ -1742,6 +2015,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMSE2 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMSE2() {
+		return $this->DIMSE2;
 	}
 
 	/**
@@ -1758,6 +2038,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTAD() {
+		return $this->DIMTAD;
+	}
+
+	/**
 	 * Zero suppression for "feet & inch" dimensions
 	 *
 	 * @param string $str
@@ -1768,6 +2055,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMZIN = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMZIN() {
+		return $this->DIMZIN;
 	}
 
 	/**
@@ -1784,6 +2078,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMBLK() {
+		return $this->DIMBLK;
+	}
+
+	/**
 	 * 1 = create associative dimensioning, 0 = draw individual entities
 	 *
 	 * @param string $str
@@ -1794,6 +2095,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMASO = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMASO() {
+		return $this->DIMASO;
 	}
 
 	/**
@@ -1810,6 +2118,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMSHO() {
+		return $this->DIMSHO;
+	}
+
+	/**
 	 * General dimensioning suffix
 	 *
 	 * @param string $str
@@ -1820,6 +2135,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMPOST = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMPOST() {
+		return $this->DIMPOST;
 	}
 
 	/**
@@ -1836,6 +2158,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMAPOST() {
+		return $this->DIMAPOST;
+	}
+
+	/**
 	 * Alternate unit dimensioning performed if nonzero
 	 *
 	 * @param string $str
@@ -1846,6 +2175,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMALT = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMALT() {
+		return $this->DIMALT;
 	}
 
 	/**
@@ -1862,6 +2198,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMALTD() {
+		return $this->DIMALTD;
+	}
+
+	/**
 	 * Alternate unit scale factor
 	 *
 	 * @param string $str
@@ -1872,6 +2215,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMALTF = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMALTF() {
+		return $this->DIMALTF;
 	}
 
 	/**
@@ -1888,6 +2238,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMLFAC() {
+		return $this->DIMLFAC;
+	}
+
+	/**
 	 * If text outside extensions, force line extensions between extensions if nonzero
 	 *
 	 * @param string $str
@@ -1898,6 +2255,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTOFL = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTOFL() {
+		return $this->DIMTOFL;
 	}
 
 	/**
@@ -1914,6 +2278,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTVP() {
+		return $this->DIMTVP;
+	}
+
+	/**
 	 * Force text inside extensions if nonzero
 	 *
 	 * @param string $str
@@ -1924,6 +2295,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMTIX = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMTIX() {
+		return $this->DIMTIX;
 	}
 
 	/**
@@ -1940,6 +2318,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMSOXD() {
+		return $this->DIMSOXD;
+	}
+
+	/**
 	 * Use separate arrow blocks if nonzero
 	 *
 	 * @param string $str
@@ -1950,6 +2335,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMSAH = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMSAH() {
+		return $this->DIMSAH;
 	}
 
 	/**
@@ -1966,6 +2358,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMBLK1() {
+		return $this->DIMBLK1;
+	}
+
+	/**
 	 * Second arrow block name
 	 *
 	 * @param string $str
@@ -1976,6 +2375,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMBLK2 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMBLK2() {
+		return $this->DIMBLK2;
 	}
 
 	/**
@@ -1992,6 +2398,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMSTYLE() {
+		return $this->DIMSTYLE;
+	}
+
+	/**
 	 * Dimension line color, range is 0 = BYBLOCK, 256 = BYLAYER
 	 *
 	 * @param string $str
@@ -2002,6 +2415,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMCLRD = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMCLRD() {
+		return $this->DIMCLRD;
 	}
 
 	/**
@@ -2018,6 +2438,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMCLRE() {
+		return $this->DIMCLRE;
+	}
+
+	/**
 	 * Dimension text color, range is 0 = BYBLOCK, 256 = BYLAYER
 	 *
 	 * @param string $str
@@ -2028,6 +2455,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMCLRT = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMCLRT() {
+		return $this->DIMCLRT;
 	}
 
 	/**
@@ -2044,6 +2478,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetDIMTFAC() {
+		return $this->DIMTFAC;
+	}
+
+	/**
 	 * Dimension line gap
 	 *
 	 * @param string $str
@@ -2054,6 +2495,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->DIMGAP = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetDIMGAP() {
+		return $this->DIMGAP;
 	}
 
 	/**
@@ -2070,6 +2518,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetLUNITS() {
+		return $this->LUNITS;
+	}
+
+	/**
 	 * Units precision for coordinates and distances
 	 *
 	 * @param string $str
@@ -2080,6 +2535,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->LUPREC = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetLUPREC() {
+		return $this->LUPREC;
 	}
 
 	/**
@@ -2096,6 +2558,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSKETCHINC() {
+		return $this->SKETCHINC;
+	}
+
+	/**
 	 * Sketch record increment
 	 *
 	 * @param string $str
@@ -2106,6 +2575,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->FILLETRAD = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetFILLETRAD() {
+		return $this->FILLETRAD;
 	}
 
 	/**
@@ -2122,6 +2598,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetAUNITS() {
+		return $this->AUNITS;
+	}
+
+	/**
 	 * Units precision for angles
 	 *
 	 * @param string $str
@@ -2132,6 +2615,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->AUPREC = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetAUPREC() {
+		return $this->AUPREC;
 	}
 
 	/**
@@ -2148,6 +2638,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetMENU() {
+		return $this->MENU;
+	}
+
+	/**
 	 * Current elevation set by ELEV command
 	 *
 	 * @param string $str
@@ -2158,6 +2655,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->ELEVATION = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetELEVATION() {
+		return $this->ELEVATION;
 	}
 
 	/**
@@ -2174,6 +2678,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetPELEVATION() {
+		return $this->PELEVATION;
+	}
+
+	/**
 	 * Current thickness set by ELEV command
 	 *
 	 * @param string $str
@@ -2184,6 +2695,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->THICKNESS = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetTHICKNESS() {
+		return $this->THICKNESS;
 	}
 
 	/**
@@ -2200,6 +2718,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetLIMCHECK() {
+		return $this->LIMCHECK;
+	}
+
+	/**
 	 * Blip mode on if nonzero
 	 *
 	 * @param string $str
@@ -2210,6 +2735,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->BLIPMODE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetBLIPMODE() {
+		return $this->BLIPMODE;
 	}
 
 	/**
@@ -2226,6 +2758,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetCHAMFERA() {
+		return $this->CHAMFERA;
+	}
+
+	/**
 	 * Second chamfer distance
 	 *
 	 * @param string $str
@@ -2236,6 +2775,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->CHAMFERB = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetCHAMFERB() {
+		return $this->CHAMFERB;
 	}
 
 	/**
@@ -2252,6 +2798,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSKPOLY() {
+		return $this->SKPOLY;
+	}
+
+	/**
 	 * 0 = timer off, 1 = timer on
 	 *
 	 * @param string $str
@@ -2262,6 +2815,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USRTIMER = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSRTIMER() {
+		return $this->USRTIMER;
 	}
 
 	/**
@@ -2278,6 +2838,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetANGBASE() {
+		return $this->ANGBASE;
+	}
+
+	/**
 	 * 1 = clockwise angles, 0 = counterclockwise
 	 *
 	 * @param string $str
@@ -2288,6 +2855,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->ANGDIR = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetANGDIR() {
+		return $this->ANGDIR;
 	}
 
 	/**
@@ -2304,6 +2878,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetPDMODE() {
+		return $this->PDMODE;
+	}
+
+	/**
 	 * Point display size
 	 *
 	 * @param string $str
@@ -2314,6 +2895,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->PDSIZE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetPDSIZE() {
+		return $this->PDSIZE;
 	}
 
 	/**
@@ -2330,6 +2918,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetPLINEWID() {
+		return $this->PLINEWID;
+	}
+
+	/**
 	 * 0 = static coordinate display, 1 = continuous update, 2 = "d<a" format
 	 *
 	 * @param string $str
@@ -2340,6 +2935,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->COORDS = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetCOORDS() {
+		return $this->COORDS;
 	}
 
 	/**
@@ -2356,6 +2958,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSPLFRAME() {
+		return $this->SPLFRAME;
+	}
+
+	/**
 	 * Spline curve type for PEDIT Spline (See your AutoCAD Reference Manual)
 	 *
 	 * @param string $str
@@ -2366,6 +2975,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->SPLINETYPE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetSPLINETYPE() {
+		return $this->SPLINETYPE;
 	}
 
 	/**
@@ -2382,6 +2998,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSPLINESEGS() {
+		return $this->SPLINESEGS;
+	}
+
+	/**
 	 * Attribute entry dialogs, 1 = on, 0 = off
 	 *
 	 * @param string $str
@@ -2392,6 +3015,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->ATTDIA = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetATTDIA() {
+		return $this->ATTDIA;
 	}
 
 	/**
@@ -2408,6 +3038,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetATTREQ() {
+		return $this->ATTREQ;
+	}
+
+	/**
 	 * Handles enabled if nonzero
 	 *
 	 * @param string $str
@@ -2418,6 +3055,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->HANDLING = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetHANDLING() {
+		return $this->HANDLING;
 	}
 
 	/**
@@ -2454,6 +3098,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSURFTAB1() {
+		return $this->SURFTAB1;
+	}
+
+	/**
 	 * Number of mesh tabulations in second direction
 	 *
 	 * @param string $str
@@ -2464,6 +3115,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->SURFTAB2 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetSURFTAB2() {
+		return $this->SURFTAB2;
 	}
 
 	/**
@@ -2480,6 +3138,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSURFTYPE() {
+		return $this->SURFTYPE;
+	}
+
+	/**
 	 * Surface density (for PEDIT Smooth) in M direction
 	 *
 	 * @param string $str
@@ -2490,6 +3155,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->SURFU = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetSURFU() {
+		return $this->SURFU;
 	}
 
 	/**
@@ -2506,6 +3178,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSURFV() {
+		return $this->SURFV;
+	}
+
+	/**
 	 * Name of current UCS
 	 *
 	 * @param string $str
@@ -2516,6 +3195,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->UCSNAME = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUCSNAME() {
+		return $this->UCSNAME;
 	}
 
 	/**
@@ -2540,6 +3226,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetUCSORG() {
+		return $this->UCSORG;
+	}
+
+	/**
 	 * Direction of current UCS's X axis (in World coordinates)
 	 *
 	 * @param string $X
@@ -2558,6 +3251,13 @@ class Fdxf_Headers extends Fdxf_Base
 			'Z' => (string)$Z
 		);
 		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function GetUCSXDIR() {
+		return $this->UCSXDIR;
 	}
 
 	/**
@@ -2582,6 +3282,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetUCSYDIR() {
+		return $this->UCSYDIR;
+	}
+
+	/**
 	 * Current paper space UCS name
 	 *
 	 * @param string $str
@@ -2592,6 +3299,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->PUCSNAME = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetPUCSNAME() {
+		return $this->PUCSNAME;
 	}
 
 	/**
@@ -2616,6 +3330,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetPUCSORG() {
+		return $this->PUCSORG;
+	}
+
+	/**
 	 * Current paper space UCS X axis
 	 *
 	 * @param string $X
@@ -2634,6 +3355,13 @@ class Fdxf_Headers extends Fdxf_Base
 			'Z' => (string)$Z
 		);
 		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function GetPUCSXDIR() {
+		return $this->PUCSXDIR;
 	}
 
 	/**
@@ -2658,6 +3386,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetPUCSYDIR() {
+		return $this->PUCSYDIR;
+	}
+
+	/**
 	 * Five integer variables intended for use by third-party developers
 	 *
 	 * @param string $str
@@ -2668,6 +3403,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USERI1 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSERI1() {
+		return $this->USERI1;
 	}
 
 	/**
@@ -2684,6 +3426,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetUSERI2() {
+		return $this->USERI2;
+	}
+
+	/**
 	 * Five integer variables intended for use by third-party developers
 	 *
 	 * @param string $str
@@ -2694,6 +3443,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USERI3 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSERI3() {
+		return $this->USERI3;
 	}
 
 	/**
@@ -2710,6 +3466,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetUSERI4() {
+		return $this->USERI4;
+	}
+
+	/**
 	 * Five integer variables intended for use by third-party developers
 	 *
 	 * @param string $str
@@ -2720,6 +3483,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USERI5 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSERI5() {
+		return $this->USERI5;
 	}
 
 	/**
@@ -2736,6 +3506,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetUSERR1() {
+		return $this->USERR1;
+	}
+
+	/**
 	 * Five real variables intended for use by third-party developers
 	 *
 	 * @param string $str
@@ -2746,6 +3523,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USERR2 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSERR2() {
+		return $this->USERR2;
 	}
 
 	/**
@@ -2762,6 +3546,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetUSERR3() {
+		return $this->USERR3;
+	}
+
+	/**
 	 * Five real variables intended for use by third-party developers
 	 *
 	 * @param string $str
@@ -2772,6 +3563,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->USERR4 = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUSERR4() {
+		return $this->USERR4;
 	}
 
 	/**
@@ -2788,6 +3586,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetUSERR5() {
+		return $this->USERR5;
+	}
+
+	/**
 	 * 1 = set UCS to WCS during DVIEW/VPOINT, 0 = don't change UCS
 	 *
 	 * @param string $str
@@ -2798,6 +3603,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->WORLDVIEW = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetWORLDVIEW() {
+		return $this->WORLDVIEW;
 	}
 
 	/**
@@ -2817,6 +3629,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetSHADEDGE() {
+		return $this->SHADEDGE;
+	}
+
+	/**
 	 * Percent ambient/diffuse light, range 1-100, default 70
 	 *
 	 * @param string $str
@@ -2827,6 +3646,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->SHADEDIF = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetSHADEDIF() {
+		return $this->SHADEDIF;
 	}
 
 	/**
@@ -2843,6 +3669,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetTILEMODE() {
+		return $this->TILEMODE;
+	}
+
+	/**
 	 * Sets maximum number of viewports to be regenerated
 	 *
 	 * @param string $str
@@ -2856,6 +3689,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetMAXACTVP() {
+		return $this->MAXACTVP;
+	}
+
+	/**
 	 * Limits checking in paper space when nonzero
 	 *
 	 * @param string $str
@@ -2866,6 +3706,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->PLIMCHECK = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetPLIMCHECK() {
+		return $this->PLIMCHECK;
 	}
 
 	/**
@@ -2890,6 +3737,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetPEXTMIN() {
+		return $this->PEXTMIN;
+	}
+
+	/**
 	 * Maximum X, Y, and Z extents for paper space
 	 *
 	 * @param string $X
@@ -2911,6 +3765,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetPEXTMAX() {
+		return $this->PEXTMAX;
+	}
+
+	/**
 	 * Minimum X and Y limits in paper space
 	 *
 	 * @param string $X
@@ -2926,6 +3787,13 @@ class Fdxf_Headers extends Fdxf_Base
 			'Y' => (string)$Y
 		);
 		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function GetPLIMMIN() {
+		return $this->PLIMMIN;
 	}
 
 	/**
@@ -2947,6 +3815,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return array
+	 */
+	public function GetPLIMMAX() {
+		return $this->PLIMMAX;
+	}
+
+	/**
 	 * Low bit set = display fractions, feet-and-inches, and surveyor's angles in input format
 	 *
 	 * @param string $str
@@ -2957,6 +3832,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->UNITMODE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUNITMODE() {
+		return $this->UNITMODE;
 	}
 
 	/**
@@ -2971,6 +3853,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->VISRETAIN = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetVISRETAIN() {
+		return $this->VISRETAIN;
 	}
 
 	/**
@@ -2989,6 +3878,13 @@ class Fdxf_Headers extends Fdxf_Base
 	}
 
 	/**
+	 * @return string
+	 */
+	public function GetPLINEGEN() {
+		return $this->PLINEGEN;
+	}
+
+	/**
 	 * Controls paper space linetype scaling
 	 * 1 = no special linetype scaling
 	 * 0 = viewport scaling governs linetype scaling
@@ -3001,6 +3897,13 @@ class Fdxf_Headers extends Fdxf_Base
 	) {
 		$this->PSLTSCALE = (string)$str;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetPSLTSCALE() {
+		return $this->PSLTSCALE;
 	}
 
 
