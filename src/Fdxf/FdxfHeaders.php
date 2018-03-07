@@ -22,9 +22,10 @@ use League\Flysystem\Filesystem as Flysystem;
 class FdxfHeaders
 {
 	/**
-	 * @var Flysystem
+	 * Application name and version for header comment.
+	 * @var string
 	 */
-	public $flysystem;
+	private $APP = 'FDXF 0.1.4';
 
 	/**
 	 * DXF overall height
@@ -45,10 +46,9 @@ class FdxfHeaders
 	public $Z = 0.0;
 
 	/**
-	 * Application name and version for header comment.
-	 * @var string
+	 * @var Flysystem
 	 */
-	private $APP = 'FDXF 0.1.0';
+	public $flysystem;
 
 	/**
 	 * @var string

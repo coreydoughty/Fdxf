@@ -117,6 +117,14 @@ class Fdxf extends FdxfBlocks
 
 
 	/**
+	 * @return string
+	 */
+	public function GetEntities() {
+		return $this->entities;
+	}
+
+
+	/**
 	 * Empty entities string
 	 *
 	 * @return self
@@ -133,9 +141,9 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function Clear() {
-		$this->ClearLayers();
 		$this->ClearEntities();
 		$this->ClearBlocks();
+		$this->ClearLayers();
 
 		return $this;
 	}
@@ -196,8 +204,8 @@ class Fdxf extends FdxfBlocks
 		$s .= $this->gc( '39', $Thickness );
 
 		return $s;
-
 	}
+
 
 	/**
 	 * Add DXF line to entities
@@ -251,7 +259,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function Circle(
-		$Layer = "0",
+		$Layer = '0',
 		$CenterX = 0.0,
 		$CenterY = 0.0,
 		$CenterZ = 0.0,
@@ -274,6 +282,7 @@ class Fdxf extends FdxfBlocks
 		return $s;
 	}
 
+
 	/**
 	 * Add DXF circle to entities
 	 *
@@ -287,7 +296,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddCircle(
-		$Layer = "0",
+		$Layer = '0',
 		$CenterX = 0.0,
 		$CenterY = 0.0,
 		$CenterZ = 0.0,
@@ -322,7 +331,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function Arc(
-		$Layer = "0",
+		$Layer = '0',
 		$CenterX = 0.0,
 		$CenterY = 0.0,
 		$CenterZ = 0.0,
@@ -366,7 +375,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddArc(
-		$Layer = "0",
+		$Layer = '0',
 		$CenterX = 0.0,
 		$CenterY = 0.0,
 		$CenterZ = 0.0,
@@ -402,7 +411,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function PlineStart(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
@@ -440,7 +449,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddPlineStart(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
@@ -475,7 +484,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function PlineEntity(
-		$Layer = "0",
+		$Layer = '0',
 		$X = 0.0,
 		$Y = 0.0,
 		$Z = 0.0,
@@ -508,7 +517,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddPlineEntity(
-		$Layer = "0",
+		$Layer = '0',
 		$X = 0.0,
 		$Y = 0.0,
 		$Z = 0.0,
@@ -534,7 +543,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function PlineClose(
-		$Layer = "0"
+		$Layer = '0'
 	) {
 		$s = '';
 		$s .= $this->gc( '0', 'SEQEND' );
@@ -552,7 +561,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddPlineClose(
-		$Layer = "0"
+		$Layer = '0'
 	) {
 		$this->entities .= $this->PlineClose(
 			$Layer
@@ -576,7 +585,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function Text(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
@@ -617,7 +626,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddText(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
@@ -653,7 +662,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function BlockEntity(
-		$Layer = "0",
+		$Layer = '0',
 		$BlockName,
 		$X = 0.0,
 		$Y = 0.0,
@@ -691,7 +700,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddBlockEntity(
-		$Layer = "0",
+		$Layer = '0',
 		$BlockName,
 		$X = 0.0,
 		$Y = 0.0,
@@ -731,7 +740,7 @@ class Fdxf extends FdxfBlocks
 	 * @return string
 	 */
 	public function Rectangle(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
@@ -835,7 +844,7 @@ class Fdxf extends FdxfBlocks
 	 * @return self
 	 */
 	public function AddRectangle(
-		$Layer = "0",
+		$Layer = '0',
 		$StartX = 0.0,
 		$StartY = 0.0,
 		$StartZ = 0.0,
