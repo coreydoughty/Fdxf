@@ -28,7 +28,7 @@ class FdxfBlocks extends FdxfTables
 
 	/**
 	 * FDXF_Blocks constructor.
-	 * Can set width, height, and thickness of drawing.
+	 * Can set overall width, height, and thickness of DXF.
 	 *
 	 * @param float $X
 	 * @param float $Y

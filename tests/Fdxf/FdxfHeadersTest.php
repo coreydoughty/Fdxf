@@ -12,6 +12,7 @@ namespace Fdxf\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Fdxf\Fdxf;
+use Fdxf\Filesystem\Local;
 
 
 /**
@@ -33,6 +34,52 @@ class FdxfHeadersTest extends TestCase
 		$this->fdxf = new Fdxf();
 	}
 
+
+	/**
+	 * Test Group Code generation
+	 */
+	public function testGroupCode() {
+		$test = $this->fdxf->gc( 1, 2 );
+		$this->assertContains('1', $test);
+		$this->assertContains('2', $test);
+	}
+
+	/**
+	 * Test accessors for overall X variable
+	 */
+	public function testOverallX() {
+		$this->fdxf->SetOverallX(0.0 );
+		$test = $this->fdxf->GetOverallX();
+		$this->assertEquals(0.0, $test);
+	}
+
+	/**
+	 * Test accessors for overall Y variable
+	 */
+	public function testOverallY() {
+		$this->fdxf->SetOverallY(0.0 );
+		$test = $this->fdxf->GetOverallY();
+		$this->assertEquals(0.0, $test);
+	}
+
+	/**
+	 * Test accessors for overall Z variable
+	 */
+	public function testOverallZ() {
+		$this->fdxf->SetOverallZ(0.0 );
+		$test = $this->fdxf->GetOverallZ();
+		$this->assertEquals(0.0, $test);
+	}
+
+	/**
+	 * Test accessors for Flysystem
+	 */
+	public function testFlysystem() {
+		$this->fdxf->SetFlysystem( new Local() );
+		$test = $this->fdxf->GetFlysystem();
+
+		$this->assertInstanceOf('League\Flysystem\Filesystem', $test);
+	}
 
 	/**
 	 * Test accessors for Version header variable

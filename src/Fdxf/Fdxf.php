@@ -31,7 +31,7 @@ class Fdxf extends FdxfBlocks
 
 	/**
 	 * FDXF constructor.
-	 * Can set width, height, and thickness of drawing.
+	 * Can set overall width, height, and thickness of DXF.
 	 *
 	 * @param float $X
 	 * @param float $Y
@@ -86,37 +86,7 @@ class Fdxf extends FdxfBlocks
 	}
 
 
-	/**
-	 * Set width, height, and thickness of drawing.
-	 * Not in Base class due to header settings
-	 *
-	 * @param float $X
-	 * @param float $Y
-	 * @param float $Z
-	 *
-	 * @return self
-	 */
-	public function SetDimensions(
-		$X = 0.0,
-		$Y = 0.0,
-		$Z = 0.0
-	) {
-		$this->SetOverallX( $X );
-		$this->SetOverallY( $Y );
-		$this->SetOverallZ( $Z );
 
-		$this->SetLIMMIN(
-			'-10',
-			'-10'
-		);
-
-		$this->SetLIMMAX(
-			( $this->X + 10 ),
-			( $this->Y + 10 )
-		);
-
-		return $this;
-	}
 
 
 	/**

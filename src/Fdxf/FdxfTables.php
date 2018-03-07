@@ -28,7 +28,7 @@ class FdxfTables extends FdxfHeaders
 
 	/**
 	 * FDXF_Tables constructor.
-	 * Can set width, height, and thickness of drawing.
+	 * Can set overall width, height, and thickness of DXF.
 	 *
 	 * @param float $X
 	 * @param float $Y
@@ -60,6 +60,12 @@ class FdxfTables extends FdxfHeaders
 		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
+	public function GetLayers() {
+		return $this->layers;
+	}
 
 	/**
 	 * Empty layers array
