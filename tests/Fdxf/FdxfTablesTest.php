@@ -30,7 +30,7 @@ class FdxfTablesTest extends TestCase
 	 * FdxfHeadersTest Function Setup
 	 */
 	public function Setup() {
-		$this->fdxf = new Fdxf();
+		$this->fdxf = new Fdxf( 11.1, 12.2, 13.3 );
 	}
 
 
@@ -51,7 +51,7 @@ class FdxfTablesTest extends TestCase
 	/**
 	 * Test build tables
 	 */
-	public function BuildTables() {
+	public function testBuildTables() {
 		$this->fdxf->SetLayers( array( '1' => 'test_a', '2' => 'test_b' ) );
 		$test = $this->fdxf->BuildTables();
 		$this->assertContains( 'ENDSEC', $test );
