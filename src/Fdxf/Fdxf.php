@@ -86,9 +86,6 @@ class Fdxf extends FdxfBlocks
 	}
 
 
-
-
-
 	/**
 	 * Add to the entity string
 	 *
