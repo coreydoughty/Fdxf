@@ -74,8 +74,8 @@ class FdxfTest extends TestCase
 		$this->fdxf->SetEntity( 'test' );
 		$this->fdxf->SetBlock( 'test' );
 		$this->fdxf->SetLayers( array( '1' => 'test_a', '2' => 'test_b' ) );
-
 		$this->fdxf->Clear();
+
 		$test = $this->fdxf->GetEntities();
 		$this->assertEmpty( $test );
 		$test = $this->fdxf->GetBlocks();

@@ -1,11 +1,12 @@
-Fdxf - DXF Class
-================
+Fdxf - DXF ASCII Class
+======================
 
 
   - [Basics](#basics)
     - [Create and Construct](#create-and-construct)
     - [File System (Flysystem)](#file-system-flysystem)
     - [Output](#output)
+    - [File Converter](#file-converter)
   - [Section Headers](#section-headers)
   - [Section Tables](#section-tables)
     - [Set Layers](#set-layers)
@@ -66,6 +67,33 @@ See class Fdxf and Fdxf_Base.
       * leave empty|null to not put in a file system
     - _File Name (string)_: default null
       * leave empty|null to not put in a file system
+
+
+### File Converter
+  + __Method__: `FileConverter( ... )`
+    - Example A: `$dxf->FileConverter( '/tmp/', '/tmp/', 'drawing.dxf' );`
+    - Returns an exception or shell message
+  + __Notes__:
+    - Uses `TeighaFileConverter`; must be installed and in $PATH
+      * https://www.opendesign.com/guestfiles/teigha_file_converter
+    - Tested on a linux and darwin system
+    - Requires the file to be local and pushes to local; probably use after `Output()`
+  + __Variables__:
+    - _Dir Input_
+    - _Dir Output_
+    - _File Input_: default null
+      - can use wildcard, default:"\*.DWG;\*.DXF"
+    - _Output Version_: default ACAD2000
+      - 'ACAD9','ACAD10','ACAD12', 'ACAD13','ACAD14', 'ACAD2000','ACAD2004', 'ACAD2007','ACAD2010'
+    - _Output Type_: default DWG
+      - 'DWG','DXF','DXB'
+    - _Recurse Dir Input_: default 0
+      - '0', '1'
+    - _Audit_: default 1
+      - needs to be '1' otherwise it fails; can also be '0'
+    - _Platform_: default linuxfb
+      - 'linuxfb', 'offscreen', 'cocoa'; null omits switch
+      -  Seems to work on linux with `linuxfb`, however `offscreen` is also an option
 
 
 ---

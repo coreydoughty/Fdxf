@@ -87,6 +87,67 @@ class Fdxf extends FdxfBlocks
 
 
 	/**
+	 * Uses TeighaFileConverter; must be installed and in $PATH
+	 * https://www.opendesign.com/guestfiles/teigha_file_converter
+	 *
+	 * Tested on a linux system
+	 * Requires the file to be local and pushes to local; probably use after `Output()`
+	 *
+	 * file_input: can use wildcard, default:"*.DWG;*.DXF"
+	 * output_version: 'ACAD9','ACAD10','ACAD12', 'ACAD13','ACAD14', 'ACAD2000','ACAD2004', 'ACAD2007','ACAD2010'
+	 * output_type: 'DWG','DXF','DXB'
+	 * recurse_dir_input: '0', '1'
+	 * audit: needs to be '1' otherwise it fails; can also be '0'
+	 * platforms: 'linuxfb', 'offscreen', 'cocoa'; null omits cli switch
+	 * Seems to work with `-platform linuxfb`, however `-platform offscreen` is also an option
+	 *
+	 * @param string $dir_input
+	 * @param string $file_input
+	 * @param string $dir_output
+	 * @param string $output_version
+	 * @param string $output_type
+	 * @param string $recurse_dir_input
+	 * @param string $audit
+	 * @param string $platform
+	 *
+	 * @return string
+	 */
+	public function FileConverter(
+		$dir_input,
+		$dir_output,
+		$file_input = null,
+		$output_version = 'ACAD2000',
+		$output_type = 'DWG',
+		$recurse_dir_input = '0',
+		$audit = '1',
+		$platform = 'linuxfb'
+	) {
+		try {
+			$cmd = '$(which TeighaFileConverter) ';
+			if( isset( $platform ) ) {
+				$cmd .= '-platform ' . (string)$platform . ' ';
+			}
+			$cmd .= '"' . (string)$dir_input . '" ';
+			$cmd .= '"' . (string)$dir_output . '" ';
+			$cmd .= '"' . (string)$output_version . '" ';
+			$cmd .= '"' . (string)$output_type . '" ';
+			$cmd .= '"' . (string)$recurse_dir_input . '" ';
+			$cmd .= '"' . (string)$audit . '" ';
+			if( isset( $file_input ) ) {
+				$cmd .= '"' . (string)$file_input . '" ';
+			}
+
+			$message = shell_exec( $cmd );
+
+		} catch( \Exception $e ) {
+			$message = $e->getMessage();
+		}
+
+		return $message;
+	}
+
+
+	/**
 	 * Add to the entity string
 	 *
 	 * @param string $str

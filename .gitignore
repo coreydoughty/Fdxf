@@ -9,14 +9,8 @@
 /.settings/
 /nbproject/
 /node_modules/*
-files
 *@eaDir*
 .DS_Store
 *~
-
-###> symfony/framework-bundle ###
-.env
-/public/bundles/
-/var/
-/vendor/
-###< symfony/framework-bundle ###
+tests/Output/*.dxf
+tests/Output/*.dwg
