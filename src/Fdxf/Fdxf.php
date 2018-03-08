@@ -120,7 +120,7 @@ class Fdxf extends FdxfBlocks
 		$output_type = 'DWG',
 		$recurse_dir_input = '0',
 		$audit = '1',
-		$platform = 'linuxfb'
+		$platform = 'offscreen'
 	) {
 		try {
 			$cmd = '$(which TeighaFileConverter) ';
@@ -137,7 +137,7 @@ class Fdxf extends FdxfBlocks
 				$cmd .= '"' . (string)$file_input . '" ';
 			}
 
-			$message = shell_exec( $cmd );
+			$message = shell_exec( $cmd . ' 2>&1' );
 
 		} catch( \Exception $e ) {
 			$message = $e->getMessage();
