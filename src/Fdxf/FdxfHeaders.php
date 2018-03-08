@@ -25,7 +25,7 @@ class FdxfHeaders
 	 * Application name and version for header comment.
 	 * @var string
 	 */
-	private $APP = 'FDXF 0.1.4';
+	private $APP = 'FDXF 0.1.7';
 
 	/**
 	 * DXF overall height

@@ -12,5 +12,7 @@
 *@eaDir*
 .DS_Store
 *~
+
 tests/Output/*.dxf
 tests/Output/*.dwg
+tests/Output/*.bak

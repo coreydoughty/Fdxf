@@ -91,7 +91,7 @@ See class Fdxf and Fdxf_Base.
       - '0', '1'
     - _Audit_: default 1
       - needs to be '1' otherwise it fails; can also be '0'
-    - _Platform_: default linuxfb
+    - _Platform_: default offscreen
       - 'linuxfb', 'offscreen', 'cocoa'; null omits switch
       -  Seems to work on linux with `offscreen`, however `linuxfb` may also be an option
 

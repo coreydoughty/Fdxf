@@ -99,7 +99,7 @@ class Fdxf extends FdxfBlocks
 	 * recurse_dir_input: '0', '1'
 	 * audit: needs to be '1' otherwise it fails; can also be '0'
 	 * platforms: 'linuxfb', 'offscreen', 'cocoa'; null omits cli switch
-	 * Seems to work with `-platform linuxfb`, however `-platform offscreen` is also an option
+	 *      - Seems to work with `offscreen`, however `linuxfb` is also an option
 	 *
 	 * @param string $dir_input
 	 * @param string $file_input
@@ -116,7 +116,7 @@ class Fdxf extends FdxfBlocks
 		$dir_input,
 		$dir_output,
 		$file_input = null,
-		$output_version = 'ACAD2000',
+		$output_version = 'ACAD2010',
 		$output_type = 'DWG',
 		$recurse_dir_input = '0',
 		$audit = '1',
@@ -127,17 +127,49 @@ class Fdxf extends FdxfBlocks
 			if( isset( $platform ) ) {
 				$cmd .= '-platform ' . (string)$platform . ' ';
 			}
-			$cmd .= '"' . (string)$dir_input . '" ';
-			$cmd .= '"' . (string)$dir_output . '" ';
-			$cmd .= '"' . (string)$output_version . '" ';
-			$cmd .= '"' . (string)$output_type . '" ';
-			$cmd .= '"' . (string)$recurse_dir_input . '" ';
-			$cmd .= '"' . (string)$audit . '" ';
-			if( isset( $file_input ) ) {
-				$cmd .= '"' . (string)$file_input . '" ';
-			}
 
-			$message = shell_exec( $cmd . ' 2>&1' );
+			if( isset( $this->flysystem ) && is_object( $this->flysystem ) ) {
+
+				$dir_temp = '/tmp/'; // sys_get_temp_dir();
+
+				$file = $this->flysystem->read( $dir_input . $file_input );
+				file_put_contents( $dir_temp . $file_input, $file );
+
+				$cmd .= '"' . (string)$dir_temp . '" ';
+				$cmd .= '"' . (string)$dir_temp . '" ';
+				$cmd .= '"' . (string)$output_version . '" ';
+				$cmd .= '"' . (string)$output_type . '" ';
+				$cmd .= '"' . (string)$recurse_dir_input . '" ';
+				$cmd .= '"' . (string)$audit . '" ';
+				if( isset( $file_input ) ) {
+					$cmd .= '"' . (string)$file_input . '" ';
+				}
+				$message = shell_exec( $cmd . ' 2>&1' );
+
+				$file_input2 = substr( $file_input, 0, ( strrpos( $file_input, "." ) ) );
+				if( $output_type == 'DWG' ) {
+					$file_input2 = $file_input2 . '.dwg';
+				} else {
+					$file_input2 = $file_input2 . '.dxf';
+				}
+
+				$file = file_get_contents( $dir_temp . $file_input2 );
+				$this->flysystem->put( $dir_output . $file_input2, $file );
+
+			} else {
+
+				$cmd .= '"' . (string)$dir_input . '" ';
+				$cmd .= '"' . (string)$dir_output . '" ';
+				$cmd .= '"' . (string)$output_version . '" ';
+				$cmd .= '"' . (string)$output_type . '" ';
+				$cmd .= '"' . (string)$recurse_dir_input . '" ';
+				$cmd .= '"' . (string)$audit . '" ';
+				if( isset( $file_input ) ) {
+					$cmd .= '"' . (string)$file_input . '" ';
+				}
+				$message = shell_exec( $cmd . ' 2>&1' );
+
+			}
 
 		} catch( \Exception $e ) {
 			$message = $e->getMessage();
