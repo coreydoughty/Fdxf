@@ -5,12 +5,10 @@
   "keywords": ["fdxf", "dxf"],
   "license": "MIT",
   "type": "library",
-  "authors": [
-    {
-      "name": "Corey Doughty",
-      "email": "corey@doughty.ca"
-    }
-  ],
+  "authors": [{
+    "name": "Corey Doughty",
+    "email": "corey@doughty.ca"
+  }],
   "require": {
     "php": ">=5.6.0",
     "league/flysystem": "^1.0",

@@ -16,7 +16,6 @@ use League\Flysystem\Cached\Storage\Memory;
 use League\Flysystem\AdapterInterface;
 use League\Flysystem\Adapter\Local as Adapter;
 
-
 /**
  * Example Flysytem Class
  *
@@ -25,28 +24,28 @@ use League\Flysystem\Adapter\Local as Adapter;
  */
 class Local extends Filesystem
 {
-	/**
-	 * Local constructor.
-	 */
-	public function __construct() {
-		$localAdapter = new Adapter( '/', null, null, [
-			'file' => [
-				'public' => 0664,
-				'private' => 0600,
-			],
-			'dir' => [
-				'public' => 0775,
-				'private' => 0700,
-			]
-		] );
+    /**
+     * Local constructor.
+     */
+    public function __construct()
+    {
+        $localAdapter = new Adapter('/', null, null, [
+            'file' => [
+                'public' => 0664,
+                'private' => 0600,
+            ],
+            'dir' => [
+                'public' => 0775,
+                'private' => 0700,
+            ]
+        ]);
 
-		$cacheStore = new Memory();
+        $cacheStore = new Memory();
 
-		$adapter = new CachedAdapter( $localAdapter, $cacheStore );
+        $adapter = new CachedAdapter($localAdapter, $cacheStore);
 
-		parent::__construct( $adapter, [
-			'visibility' => AdapterInterface::VISIBILITY_PUBLIC
-		] );
-	}
-
+        parent::__construct($adapter, [
+            'visibility' => AdapterInterface::VISIBILITY_PUBLIC
+        ]);
+    }
 }
